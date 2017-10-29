@@ -37,8 +37,9 @@ def home():
 @app.route('/index')
 def index():
     simpleForm = twitterForm()
-
-    return render_template('twitterform.html',form = simpleForm)
+    resp = make_response(render_template('twitterform.html',form = simpleForm))
+    resp.set_cookie('user', '32')
+    return resp
 
 
 
@@ -47,10 +48,9 @@ def result():
     form = twitterForm(request.form)
     if request.method == 'POST':
         username = form.username.data
-        resp = make_response(render_template('twitterresult.html', name = username))
-        resp.set_cookie('username', username)
+        return render_template('twitterresult.html', name = username)
         
-        return resp
+        
     
 @app.route('/<user_name>/tweets')
 def twitter_users(user_name):
