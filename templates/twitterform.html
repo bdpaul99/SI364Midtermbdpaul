@@ -1,0 +1,8 @@
+{% block content %}
+  <h1>Welcome to the twitter app</h1>
+  <form method="POST" action="http://localhost:5000/result">
+     
+      <p>{{ form.username.label }}{{ form.username() }}</p>
+      {{ form.submit() }}
+  </form>
+{% endblock %}
