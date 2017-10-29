@@ -1,6 +1,6 @@
 {% block content %}
   <h1>the usename you searched for was {{name}}</h1>
-  <p> check out this users <a href = http://localhost:5000/tweets>tweets</a> </p>
-  <p> check out this users <a href = http://localhost:5000/followers>follwers</a> </p>
+  <p> check out this users <a href = "http://localhost:5000/{{name}}/tweets">tweets</a> </p>
+  <p> check out this users <a href = "http://localhost:5000/{{name}}/followers">followers</a> </p>
   
 {% endblock %}

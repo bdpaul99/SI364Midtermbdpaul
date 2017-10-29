@@ -1,0 +1,8 @@
+{% block content %}
+  <h1> here are some of {{name}}'s tweets</h1>
+  <h2><a href = "http://localhost:5000/index">Home</a> </h2>
+  	 {% for r in result %}
+      <h3> {{r.text if not r.retweeted }}</h2>
+  {% endfor %}
+ 
+{% endblock %}
